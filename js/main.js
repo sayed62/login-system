@@ -31,12 +31,8 @@ function login() {
                 location.replace(arr + '/home.html')
             }
         } else {
-            document.getElementById('incorrect').innerHTML = '<span class="p-2 text-danger">Invalid email address</span>'
-        }
-    }
-
+            document.getElementById('incorrect').innerHTML = '<span class="p-2 text-danger">Invalid email address</span>'}  }
 }
-
 let username = localStorage.getItem('sessionUsername')
 if (username) {
     document.getElementById('username').innerHTML = "Welcome " + username
@@ -55,7 +51,7 @@ function Empty() {
         return true
     }
 }
-function isEmailExist() {
+function EmailExist() {
     for (let i = 0; i < signUpArray.length; i++) {
         if (signUpArray[i].email.toLowerCase() == signupEmail.value.toLowerCase()) {
             return false
@@ -78,7 +74,7 @@ function signUp() {
         document.getElementById('exist').innerHTML = '<span class="text-success m-3">Success</span>'
         return true
     }
-    if (isEmailExist() == false) {
+    if (EmailExist() == false) {
         document.getElementById('exist').innerHTML = '<span class="text-danger m-3">email already exists</span>'
 
     } else {
@@ -87,8 +83,6 @@ function signUp() {
         document.getElementById('exist').innerHTML = '<span class="text-success m-3">Success</span>'
     }
 }
-
-
 function logout() {
     localStorage.removeItem('sessionUsername')
 }
